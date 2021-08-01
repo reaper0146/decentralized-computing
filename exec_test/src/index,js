@@ -19,3 +19,11 @@ const getIExec = async () => {
     ethProvider: ethProvider,
   });
 };
+
+const userAddress = await iexec.wallet.getAddress();
+console.log('User address:', userAddress);
+
+//send ETH to address
+const txHash = await iexec.wallet.sendETH(weiAmount, toEthAddress);
+console.log('Transaction hash:', txHash);
+
