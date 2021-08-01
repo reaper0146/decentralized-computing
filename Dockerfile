@@ -32,9 +32,7 @@ RUN cp parity /usr/local/bin
 RUN parity --version
 
 
-RUN ARCH=`uname -m` && ETHKEY_URL=`curl -sS "https://vanity-service.parity.io/parity-binaries?version=stable&format=markdown&os=linux&architecture=$ARCH" | grep ethkey | awk {'print $5'}  | cut -d"(" -f2 | cut -d")" -f1`
-RUN echo $ETHKEY_URL 
-RUN wget -q $ETHKEY_URL
+RUN ARCH=`uname -m` && ETHKEY_URL=`curl -sS "https://vanity-service.parity.io/parity-binaries?version=stable&format=markdown&os=linux&architecture=$ARCH" | grep ethkey | awk {'print $5'}  | cut -d"(" -f2 | cut -d")" -f1` && wget -q $ETHKEY_URL
 RUN chmod +x ethkey
 RUN cp ethkey /usr/local/bin
 
