@@ -1,0 +1,21 @@
+import { IExec } from 'iexec';
+
+const iexec = new IExec({
+  ethProvider: ethProvider, // an eth signer provider like MetaMask
+});
+
+const getIExec = async () => {
+  let ethProvider;
+  if (!window.ethereum)
+    // check existing web3 provider
+    throw Error('Need to install MetaMask');
+  ethProvider = window.ethereum;
+  try {
+    await window.ethereum.request({ method: 'eth_requestAccounts' }); // prompt the use to grant the dapp access to the blockchain
+  } catch (error) {
+    throw Error('User denied access', error);
+  }
+  return new IExec({
+    ethProvider: ethProvider,
+  });
+};

@@ -1,0 +1,15 @@
+{
+  "default": "viviani",
+  "chains": {
+    "goerli": {},
+    "viviani": {},
+    "kovan": {
+      "id": "42",
+      "host": "https://kovan.infura.io/v3/6cc1f696559744a1834146d327efbc88"
+    },
+    "mainnet": {},
+    "bellecour": {},
+    "enterprise": {},
+    "enterprise-testnet": {}
+  }
+}
