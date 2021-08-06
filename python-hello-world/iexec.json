@@ -12,7 +12,46 @@
     "type": "DOCKER",
     "multiaddr": "registry.hub.docker.com/palsoumya96/python-launcher:1.0.0",
     "checksum": "0x3dd8cdb9d18d5ec859d7747c7bc19b8f32f67f9faed19b318f56b83c9a486e85",
-    "mrenclave": {"provider":"SCONE","version":"v5","entrypoint":"python3 /app/app.py","heapSize":1073741824,"fingerprint":"0cd88fed2b1f422f71aaf00cf17e629cc4c029007f41e191cbc2a7de4c5f45f8"}
+    "mrenclave": {
+      "provider": "SCONE",
+      "version": "v5",
+      "entrypoint": "python3 /app/app.py",
+      "heapSize": 1073741824,
+      "fingerprint": "0cd88fed2b1f422f71aaf00cf17e629cc4c029007f41e191cbc2a7de4c5f45f8"
+    }
   },
-  "logo": "logo.png"
+  "logo": "logo.png",
+  "order": {
+    "apporder": {
+      "app": "0xbc96aA70e63deB4E4610c87d60251c589B3A1Fc4",
+      "appprice": "1",
+      "volume": "1000000",
+      "tag": [],
+      "datasetrestrict": "0x0000000000000000000000000000000000000000",
+      "workerpoolrestrict": "0x0000000000000000000000000000000000000000",
+      "requesterrestrict": "0x0000000000000000000000000000000000000000"
+    }
+  },
+  "dapps": [
+    {
+      "name": "Recomanded-dapp-for-MyDataset",
+      "addresses": {
+        "5": "0x0000000000000000000000000000000000000000"
+      },
+      "buyConf": {
+        "params": {
+          "iexec_args": ""
+        },
+        "tag": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "trust": "0",
+        "callback": "0x0000000000000000000000000000000000000000"
+      }
+    }
+  ],
+  "dataset": {
+    "owner": "0x2DE485C25042BA953718d34C9a4EcCd8496256eA",
+    "name": "my-dataset",
+    "multiaddr": "/ipfs/QmW2WQi7j6c7UgJTarActp7tDNikE4B2qXtFCfLPdsgaTQ",
+    "checksum": "0x0000000000000000000000000000000000000000000000000000000000000000"
+  }
 }
