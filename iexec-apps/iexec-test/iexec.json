@@ -31,6 +31,15 @@
       "datasetrestrict": "0x0000000000000000000000000000000000000000",
       "workerpoolrestrict": "0x0000000000000000000000000000000000000000",
       "requesterrestrict": "0x0000000000000000000000000000000000000000"
+    },
+    "datasetorder": {
+      "dataset": "0xdbEb50Bac72E4006a39aB1332Ba5Ae2B53264F0F",
+      "datasetprice": "0",
+      "volume": "1000000",
+      "tag": [],
+      "apprestrict": "0x0000000000000000000000000000000000000000",
+      "workerpoolrestrict": "0x0000000000000000000000000000000000000000",
+      "requesterrestrict": "0x0000000000000000000000000000000000000000"
     }
   },
   "dapps": [
@@ -52,7 +61,7 @@
   "dataset": {
     "owner": "0xd909aAD4cd3dC9e6420B1bB6C098b48FBf672855",
     "name": "my-dataset",
-    "multiaddr": "/ipfs/QmW2WQi7j6c7UgJTarActp7tDNikE4B2qXtFCfLPdsgaTQ",
-    "checksum": "0x0000000000000000000000000000000000000000000000000000000000000000"
+    "multiaddr": "https://github.com/soumyapal96/decentralized-computing/raw/main/iexec-apps/iexec-test/datasets/encrypted/private_code.py.enc",
+    "checksum": "0x12326682dc9d6dced1eeb71a398a2ec32f3fdef150630b60a3857eed2e73577e"
   }
 }
