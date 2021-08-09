@@ -30,6 +30,15 @@
       "datasetrestrict": "0x0000000000000000000000000000000000000000",
       "workerpoolrestrict": "0x0000000000000000000000000000000000000000",
       "requesterrestrict": "0x0000000000000000000000000000000000000000"
+    },
+    "datasetorder": {
+      "dataset": "0x69F04ca2a649f45E52F1e9f0894cDEa6A57AeB4e",
+      "datasetprice": "0",
+      "volume": "1000000",
+      "tag": [],
+      "apprestrict": "0x0000000000000000000000000000000000000000",
+      "workerpoolrestrict": "0x0000000000000000000000000000000000000000",
+      "requesterrestrict": "0x0000000000000000000000000000000000000000"
     }
   },
   "dapps": [
