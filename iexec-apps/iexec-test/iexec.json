@@ -1,0 +1,58 @@
+{
+  "description": "My iExec ressource description, must be at least 150 chars long in order to pass the validation checks. Describe your application, dataset or workerpool to your users",
+  "license": "MIT",
+  "author": "?",
+  "social": {
+    "website": "?",
+    "github": "?"
+  },
+  "logo": "logo.png",
+  "buyConf": {
+    "params": {
+      "iexec_args": ""
+    },
+    "tag": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "trust": "0",
+    "callback": "0x0000000000000000000000000000000000000000"
+  },
+  "app": {
+    "owner": "0xd909aAD4cd3dC9e6420B1bB6C098b48FBf672855",
+    "name": "python-hello-world",
+    "type": "DOCKER",
+    "multiaddr": "docker.io/palsoumya96/python-launcher:1.0.0",
+    "checksum": "0xa28d8ae83ae586b4c8addd60413a8302798891411a8f87b5f0987050d0d73816"
+  },
+  "order": {
+    "apporder": {
+      "app": "0x6580C6723588112C2CF626b4D1684597799473bE",
+      "appprice": "0",
+      "volume": "1000000",
+      "tag": [],
+      "datasetrestrict": "0x0000000000000000000000000000000000000000",
+      "workerpoolrestrict": "0x0000000000000000000000000000000000000000",
+      "requesterrestrict": "0x0000000000000000000000000000000000000000"
+    }
+  },
+  "dapps": [
+    {
+      "name": "Recomanded-dapp-for-MyDataset",
+      "addresses": {
+        "5": "0x0000000000000000000000000000000000000000"
+      },
+      "buyConf": {
+        "params": {
+          "iexec_args": ""
+        },
+        "tag": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "trust": "0",
+        "callback": "0x0000000000000000000000000000000000000000"
+      }
+    }
+  ],
+  "dataset": {
+    "owner": "0xd909aAD4cd3dC9e6420B1bB6C098b48FBf672855",
+    "name": "my-dataset",
+    "multiaddr": "/ipfs/QmW2WQi7j6c7UgJTarActp7tDNikE4B2qXtFCfLPdsgaTQ",
+    "checksum": "0x0000000000000000000000000000000000000000000000000000000000000000"
+  }
+}
