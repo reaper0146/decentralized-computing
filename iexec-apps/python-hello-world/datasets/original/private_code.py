@@ -36,7 +36,7 @@ def bubbleSort(arr, asc):
 
 def main():
     print("------------------------")
-    print("STARTING private code execution")
+    print("STARTING private code execution!")
 
     # treat the args
     # /app/app.py https://inputfile_download_link.com <asc/desc> 

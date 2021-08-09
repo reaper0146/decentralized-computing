@@ -1,0 +1,66 @@
+{
+  "description": "My iExec ressource description, must be at least 150 chars long in order to pass the validation checks. Describe your application, dataset or workerpool to your users",
+  "license": "MIT",
+  "author": "?",
+  "social": {
+    "website": "?",
+    "github": "?"
+  },
+  "app": {
+    "owner": "0xfDA333aF5659231Bce351FF1335f489041C2fF78",
+    "name": "My python launcher App",
+    "type": "DOCKER",
+    "multiaddr": "registry.hub.docker.com/palsoumya96/python-launcher:1.0.0",
+    "checksum": "0x3dd8cdb9d18d5ec859d7747c7bc19b8f32f67f9faed19b318f56b83c9a486e85",
+    "mrenclave": {
+      "provider": "SCONE",
+      "version": "v5",
+      "entrypoint": "python3 /app/app.py",
+      "heapSize": 1073741824,
+      "fingerprint": "0cd88fed2b1f422f71aaf00cf17e629cc4c029007f41e191cbc2a7de4c5f45f8"
+    }
+  },
+  "logo": "logo.png",
+  "order": {
+    "apporder": {
+      "app": "0x8C10a27a573D289b21815a72054391BEC0B7452D",
+      "appprice": "0",
+      "volume": "1000000",
+      "tag": [],
+      "datasetrestrict": "0x0000000000000000000000000000000000000000",
+      "workerpoolrestrict": "0x0000000000000000000000000000000000000000",
+      "requesterrestrict": "0x0000000000000000000000000000000000000000"
+    },
+    "datasetorder": {
+      "dataset": "0xDfa7f1A569E130aFA0f5cfe83FC8763d07f97FE5",
+      "datasetprice": "0",
+      "volume": "1000000",
+      "tag": [],
+      "apprestrict": "0x0000000000000000000000000000000000000000",
+      "workerpoolrestrict": "0x0000000000000000000000000000000000000000",
+      "requesterrestrict": "0x0000000000000000000000000000000000000000"
+    }
+  },
+  "dapps": [
+    {
+      "name": "Recomanded-dapp-for-MyDataset",
+      "addresses": {
+        "5": "0x0000000000000000000000000000000000000000"
+      },
+      "buyConf": {
+        "params": {
+          "iexec_args": ""
+        },
+        "tag": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "trust": "0",
+        "callback": "0x0000000000000000000000000000000000000000"
+      }
+    }
+  ],
+  "dataset": {
+    "owner": "0xfDA333aF5659231Bce351FF1335f489041C2fF78",
+    "name": "my-dataset",
+    "multiaddr": "/ipfs/QmW2WQi7j6c7UgJTarActp7tDNikE4B2qXtFCfLPdsgaTQ",
+    "checksum": "0x0000000000000000000000000000000000000000000000000000000000000000"
+  }
+}
