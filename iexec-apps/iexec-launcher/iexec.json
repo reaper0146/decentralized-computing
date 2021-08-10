@@ -16,10 +16,11 @@
     "callback": "0x0000000000000000000000000000000000000000"
   },
   "app": {
-    "owner": "0x4B983B1917dE0Fbe20E1586aa511696fD317C627",
+    "owner": "0xB2AA519f14F1dF088E60faFFEef096b292Db5F5e",
     "name": "python-hello-world",
     "type": "DOCKER",
-    "multiaddr": "docker.io/palsoumya96/iexec-test:1.0.0",
-    "checksum": "0x22d424e51d86db1db5f2c8c2b93b046de8aadc6e0335af22ba52ebb909333a34"
+    "multiaddr": "docker.io/palsoumya96/iexec-launcher:1.0.0",
+    "checksum": "0x5fdcff630740194f60431f0ca1a1148da8a56c3ef5dee07e2d5be2466aa86ccc",
+    "mrenclave": "||41f0117a3c62966b48ef6e2388b5fe7ff719b1f48abbf417e855fff0546a8e0d | python -B /app/app.py"
   }
 }

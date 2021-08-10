@@ -1,0 +1,4 @@
+#!/bin/sh
+# Execute inside app
+cd $(dirname $0)
+docker image build -t palsoumya96/iexec-launcher:1.0.0 .
