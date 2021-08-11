@@ -19,7 +19,7 @@
     "owner": "0x4B983B1917dE0Fbe20E1586aa511696fD317C627",
     "name": "python-hello-world",
     "type": "DOCKER",
-    "multiaddr": "docker.io/iexechub/python-hello-world:1.0.0",
-    "checksum": "0xa28d8ae83ae586b4c8addd60413a8302798891411a8f87b5f0987050d0d73816"
+    "multiaddr": "docker.io/palsoumya96/iexec-execute:1.0.0",
+    "checksum": "0xc9dbd0cfa38776278ffc2a9cd3a496c0048fa2bad2924e9442613121adac7778"
   }
 }
