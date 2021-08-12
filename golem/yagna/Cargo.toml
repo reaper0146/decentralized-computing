@@ -1,0 +1,208 @@
+[package]
+name = "yagna"
+version = "0.7.2"
+description = "Open platform and marketplace for distributed computations"
+readme = "README.md"
+authors = ["Golem Factory <contact@golem.network>"]
+homepage = "https://github.com/golemfactory/yagna/core/serv"
+repository = "https://github.com/golemfactory/yagna"
+license = "GPL-3.0"
+edition = "2018"
+
+[features]
+default = ['erc20-driver', 'zksync-driver', 'gftp/bin']
+static-openssl = ["openssl/vendored", "openssl-probe"]
+dummy-driver = ['ya-dummy-driver']
+erc20-driver = ['ya-erc20-driver']
+zksync-driver = ['ya-zksync-driver']
+tos = []
+
+[[bin]]
+name = "yagna"
+path = "core/serv/src/main.rs"
+
+[dependencies]
+ya-activity = "0.3"
+ya-compile-time-utils = "0.2"
+ya-core-model = { version = "^0.4"}
+ya-dummy-driver = { version = "0.2", optional = true }
+ya-file-logging = "0.1"
+ya-erc20-driver = { version = "0.3", optional = true }
+ya-zksync-driver = { version = "0.2", optional = true }
+ya-identity = "0.2"
+ya-market = "0.3"
+ya-metrics = "0.1"
+ya-net = { version = "0.2", features = ["service"] }
+ya-payment = "0.2"
+ya-persistence = { version = "0.2", features = ["service"] }
+ya-sb-proto = "0.4"
+ya-sb-router = "0.4"
+ya-service-api = "0.1"
+ya-service-api-derive = "0.1"
+ya-service-api-interfaces = "0.1"
+ya-service-api-web = "0.1"
+ya-service-bus = "0.4"
+ya-sgx = "0.1"
+ya-utils-path = "0.1"
+ya-utils-futures = "0.1"
+ya-utils-process = { version = "0.1", features = ["lock"] }
+ya-utils-networking = "0.1"
+ya-version = "0.1"
+ya-vpn = "0.1"
+
+gftp = { version = "^0.2", optional = true } # just to enable gftp build for cargo-deb
+ya-provider = { version = "0.2", optional = true } # just to enable conditionally running some tests
+
+actix-rt = "1.0"
+actix-service = "1.0"
+actix-web = "3.2"
+anyhow = "1.0"
+chrono = "0.4"
+directories = "2.0.2"
+dotenv = "0.15.0"
+futures = "0.3"
+lazy_static = "1.4"
+log = "0.4"
+openssl = "0.10"
+openssl-probe = { version = "0.1", optional = true }
+structopt = "0.3"
+tokio = {version = "0.2.22", features=["uds"]}
+url = "2.1.1"
+
+[package.metadata.deb]
+name="golem-requestor"
+assets = [
+    ["target/release/yagna", "usr/bin/", "755"],
+    ["target/release/gftp", "usr/bin/", "755"],
+    ["README.md", "usr/share/doc/yagna/", "644"],
+    ["core/serv/README.md", "usr/share/doc/yagna/service.md", "644"],
+]
+conflicts="ya-provider"
+features=["static-openssl"]
+maintainer-scripts="debian/core"
+depends="libgcc1, libc6 (>= 2.23)"
+extended-description="""The Next Golem Milestone.
+
+An open platform and marketplace for distributed computations.
+"""
+
+
+[package.metadata.deb.variants.provider]
+name="golem-provider"
+replaces="golem-requestor"
+maintainer-scripts="debian/core"
+features=["static-openssl"]
+depends="libgcc1, libc6 (>= 2.23)"
+assets = [
+    ["target/release/yagna", "usr/bin/", "755"],
+    ["target/release/ya-provider", "usr/bin/", "755"],
+    ["target/release/gftp", "usr/bin/", "755"],
+    ["target/release/exe-unit", "usr/lib/yagna/plugins/", "755"],
+    ["README.md", "usr/share/doc/yagna/", "644"],
+    ["core/serv/README.md", "usr/share/doc/yagna/service.md", "644"],
+    ["agent/provider/readme.md", "usr/share/doc/yagna/run-provider.md", "644"],
+]
+
+
+[workspace]
+members = [
+    "agent/provider",
+    "core/activity",
+    "core/gftp",
+    "core/identity",
+    "core/market",
+    "core/market/resolver",
+    "core/model",
+    "core/net",
+    "core/payment",
+    "core/payment-driver/base",
+    "core/payment-driver/dummy",
+    "core/payment-driver/erc20",
+    "core/payment-driver/zksync",
+    "core/persistence",
+    "core/serv-api",
+    "core/serv-api/cache",
+    "core/serv-api/derive",
+    "core/serv-api/interfaces",
+    "core/serv-api/web",
+    "core/sgx",
+    "core/version",
+    "core/vpn",
+    "exe-unit",
+    "exe-unit/runtime-api",
+    "exe-unit/tokio-process-ns",
+    "golem_cli",
+    "utils/actix_utils",
+    "utils/agreement-utils",
+    "utils/compile-time-utils",
+    "utils/futures",
+    "utils/networking",
+    "utils/path",
+    "utils/process",
+    "utils/std-utils",
+    "utils/scheduler",
+    "utils/transfer",
+    "utils/diesel-utils",
+    "core/metrics"
+]
+
+[patch.crates-io]
+## SERVICES
+ya-identity = { path = "core/identity" }
+ya-net = { path = "core/net" }
+ya-market = { path = "core/market" }
+ya-market-resolver = { path = "core/market/resolver" }
+ya-activity = { path = "core/activity" }
+ya-sgx = { path = "core/sgx" }
+ya-payment = { path = "core/payment" }
+ya-payment-driver = { path = "core/payment-driver/base" }
+ya-dummy-driver = { path = "core/payment-driver/dummy" }
+ya-erc20-driver = { path = "core/payment-driver/erc20" }
+ya-zksync-driver = { path = "core/payment-driver/zksync" }
+ya-version = { path = "core/version" }
+ya-vpn = { path = "core/vpn" }
+
+## CORE UTILS
+ya-core-model = { path = "core/model" }
+ya-persistence = { path = "core/persistence" }
+ya-service-api = { path = "core/serv-api" }
+ya-service-api-cache = { path = "core/serv-api/cache" }
+ya-service-api-derive = { path = "core/serv-api/derive" }
+ya-service-api-interfaces = { path = "core/serv-api/interfaces" }
+ya-service-api-web = { path = "core/serv-api/web" }
+
+## SERVICE BUS
+#ya-service-bus = { git = "https://github.com/golemfactory/ya-service-bus.git", rev = "c4f16a69be383d9534f99928fccb64a558c47ff2"}
+#ya-sb-proto = { git = "https://github.com/golemfactory/ya-service-bus.git", rev = "c4f16a69be383d9534f99928fccb64a558c47ff2"}
+#ya-sb-router = { git = "https://github.com/golemfactory/ya-service-bus.git", rev = "c4f16a69be383d9534f99928fccb64a558c47ff2"}
+#ya-sb-util = { git = "https://github.com/golemfactory/ya-service-bus.git", rev = "c4f16a69be383d9534f99928fccb64a558c47ff2"}
+
+## CLIENT
+ya-client = { git = "https://github.com/golemfactory/ya-client.git", branch = "mf/vpn"}
+ya-client-model = { git = "https://github.com/golemfactory/ya-client.git", branch = "mf/vpn"}
+
+# ya-client = { path = "../ya-client" }
+# ya-client-model = { path = "../ya-client/model" }
+
+## OTHERS
+gftp = { path = "core/gftp" }
+tokio-process-ns = { path = "exe-unit/tokio-process-ns" }
+ya-agreement-utils = { path = "utils/agreement-utils" }
+ya-std-utils = { path = "utils/std-utils" }
+ya-compile-time-utils = { path = "utils/compile-time-utils" }
+ya-exe-unit = { path = "exe-unit" }
+ya-file-logging = { path = "utils/file-logging" }
+ya-transfer = { path = "utils/transfer" }
+ya-utils-actix = { path = "utils/actix_utils"}
+ya-utils-futures = { path = "utils/futures" }
+ya-utils-networking = { path = "utils/networking" }
+ya-utils-path = { path = "utils/path" }
+ya-utils-process = { path = "utils/process"}
+ya-diesel-utils = { path = "utils/diesel-utils"}
+ya-metrics = { path = "core/metrics" }
+ya-provider = { path = "agent/provider"}
+
+# Speed up builds on macOS (will be default in next rust version probably)
+# https://jakedeichert.com/blog/reducing-rust-incremental-compilation-times-on-macos-by-70-percent/
+[profile.dev]
+split-debuginfo = "unpacked"

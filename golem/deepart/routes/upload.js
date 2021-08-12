@@ -21,7 +21,7 @@ router.post('/upload', function(req, res, next) {
       var rawData = fs.readFileSync(oldPath) 
     
       fs.writeFileSync(newPath, rawData) 
-      res.json({file: "/uploads/deepart.jpg"}) 
+      res.json({file: "/uploads/forest.jpg"}) 
   });}
   setTimeout(fun, 3000);
 
