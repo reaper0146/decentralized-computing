@@ -1,0 +1,85 @@
+[2021-08-13T11:35:34.181-0400 DEBUG yapapi] Yapapi version: 0.6.3, script: blender.py, working directory: /home/sensorweb/MS/decentralized-computing/golem/yapapi/examples/blender
+[2021-08-13T11:35:34.181-0400 INFO yapapi] Using log file `blender-yapapi-2021-08-13_11.35.34.log`; in case of errors look for additional information there
+[2021-08-13T11:35:34.310-0400 DEBUG ya_payment.rest] request: {'method': 'GET', 'url': 'http://127.0.0.1:7465/payment-api/v1/requestorAccounts', 'timeout': 300, 'headers': {'Accept': 'application/json', 'authorization': 'Bearer a644631de1bf49a0bfce9f68ef753047', 'User-Agent': 'OpenAPI-Generator//python', 'Content-Type': 'application/json'}}
+[2021-08-13T11:35:34.312-0400 DEBUG ya_payment.rest] response body: b'[{"platform":"zksync-rinkeby-tglm","address":"0xed11041e1268d5217c9df02f04de9adb3395387e","driver":"zksync","network":"rinkeby","token":"tGLM","send":true,"receive":true}]'
+[2021-08-13T11:35:34.313-0400 DEBUG yapapi.executor] Creating allocation using payment platform `zksync-rinkeby-tglm`
+[2021-08-13T11:35:34.313-0400 DEBUG ya_payment.rest] request: {'method': 'POST', 'url': 'http://127.0.0.1:7465/payment-api/v1/allocations', 'timeout': 300, 'headers': {'Accept': 'application/json', 'Content-Type': 'application/json', 'authorization': 'Bearer a644631de1bf49a0bfce9f68ef753047', 'User-Agent': 'OpenAPI-Generator//python'}, 'data': '{"allocationId": "", "address": "0xed11041e1268d5217c9df02f04de9adb3395387e", "paymentPlatform": "zksync-rinkeby-tglm", "totalAmount": "10", "spentAmount": "", "remainingAmount": "", "timeout": "2021-08-13T16:05:34.313294+00:00", "makeDeposit": false}'}
+[2021-08-13T11:35:35.120-0400 DEBUG ya_payment.rest] response body: b'{"allocationId":"81b995b2-fac8-4404-b5d2-b52a8bc2cd66","address":"0xed11041e1268d5217c9df02f04de9adb3395387e","paymentPlatform":"zksync-rinkeby-tglm","totalAmount":"10","spentAmount":"0","remainingAmount":"10","timestamp":"2021-08-13T15:35:35.119Z","timeout":"2021-08-13T16:05:34.313294Z","makeDeposit":false}'
+[2021-08-13T11:35:35.122-0400 DEBUG ya_payment.rest] request: {'method': 'GET', 'url': 'http://127.0.0.1:7465/payment-api/v1/demandDecorations?allocationIds=81b995b2-fac8-4404-b5d2-b52a8bc2cd66', 'timeout': 300, 'headers': {'Accept': 'application/json', 'authorization': 'Bearer a644631de1bf49a0bfce9f68ef753047', 'User-Agent': 'OpenAPI-Generator//python', 'Content-Type': 'application/json'}}
+[2021-08-13T11:35:35.123-0400 DEBUG ya_payment.rest] response body: b'{"properties":[{"key":"golem.com.payment.platform.zksync-rinkeby-tglm.address","value":"0xed11041e1268d5217c9df02f04de9adb3395387e"}],"constraints":["(golem.com.payment.platform.zksync-rinkeby-tglm.address=*)"]}'
+[2021-08-13T11:35:35.124-0400 DEBUG yapapi.storage.gftp] Creating a temporary directory /tmp/yapapi-gftp-p_t4f9cb
+[2021-08-13T11:35:35.128-0400 DEBUG ya_payment.rest] request: {'method': 'GET', 'url': 'http://127.0.0.1:7465/payment-api/v1/invoiceEvents?afterTimestamp=2021-08-13T15%3A35%3A35.128145%2B00%3A00', 'timeout': 300, 'headers': {'Accept': 'application/json', 'authorization': 'Bearer a644631de1bf49a0bfce9f68ef753047', 'User-Agent': 'OpenAPI-Generator//python', 'Content-Type': 'application/json'}}
+[2021-08-13T11:35:35.130-0400 DEBUG ya_payment.rest] request: {'method': 'GET', 'url': 'http://127.0.0.1:7465/payment-api/v1/debitNoteEvents?afterTimestamp=2021-08-13T15%3A35%3A35.130392%2B00%3A00', 'timeout': 300, 'headers': {'Accept': 'application/json', 'authorization': 'Bearer a644631de1bf49a0bfce9f68ef753047', 'User-Agent': 'OpenAPI-Generator//python', 'Content-Type': 'application/json'}}
+[2021-08-13T11:35:35.133-0400 DEBUG yapapi.storage.gftp] Setting _close_urls to True, gftp version: 0.7.3 (10116c7d 2021-07-28 build #164)
+[2021-08-13T11:35:35.133-0400 DEBUG yapapi.executor] Creating Executor instance; parameters: {'self': <yapapi.executor.Executor object at 0x7f094769ae80>, 'budget': Decimal('10'), 'strategy': None, 'subnet_tag': None, 'driver': None, 'network': None, 'event_consumer': None, 'stream_output': False, 'max_workers': 3, 'timeout': datetime.timedelta(seconds=900), 'package': None, 'payload': _VmPackage(repo_url='http://girepo.dev.golem.network:8000', image_hash='9a3b5d67b0b27746283cb5f287c13eab1beaa12d92a9f536b747c7ae', constraints=_VmConstraints(min_mem_gib=0.5, min_storage_gib=2.0, min_cpu_threads=1, runtime='vm')), '_engine': <yapapi.golem.Golem object at 0x7f0947f095e0>}
+[2021-08-13T11:35:35.134-0400 DEBUG yapapi.events] ComputationStarted(job_id='22ad8efe-6794-4a9b-bbaf-e26cdc4bd09e', expires=datetime.datetime(2021, 8, 13, 15, 50, 35, 133883, tzinfo=datetime.timezone.utc))
+[2021-08-13T11:35:35.464-0400 DEBUG ya_market.rest] request: {'method': 'POST', 'url': 'http://127.0.0.1:7465/market-api/v1/demands', 'timeout': 300, 'headers': {'Accept': 'application/json', 'Content-Type': 'application/json', 'authorization': 'Bearer a644631de1bf49a0bfce9f68ef753047', 'User-Agent': 'OpenAPI-Generator//python'}, 'data': '{"properties": {"golem.srv.comp.expiration": 1628869835133, "golem.srv.caps.multi-activity": true, "golem.com.payment.platform.zksync-rinkeby-tglm.address": "0xed11041e1268d5217c9df02f04de9adb3395387e", "golem.srv.comp.task_package": "hash:sha3:9a3b5d67b0b27746283cb5f287c13eab1beaa12d92a9f536b747c7ae:http://girepo.dev.golem.network:8000/local-image-c76719083b.gvmi\\n", "golem.srv.comp.vm.package_format": "gvmkit-squash"}, "constraints": "(&(golem.com.payment.platform.zksync-rinkeby-tglm.address=*)\\n\\t(golem.com.pricing.model=linear)\\n\\t(&(golem.inf.mem.gib>=0.5)\\n\\t(golem.inf.storage.gib>=2.0)\\n\\t(golem.inf.cpu.threads>=1)\\n\\t(golem.runtime.name=vm)))"}'}
+[2021-08-13T11:35:35.468-0400 DEBUG ya_market.rest] response body: b'"c5f070cbb14e444b9f50c704906defbe-f3e4d323d7860aca30ba5468a93bab7f2368e2d784e043552b1fc0df00e0174d"'
+[2021-08-13T11:35:35.468-0400 DEBUG ya_market.rest] request: {'method': 'GET', 'url': 'http://127.0.0.1:7465/market-api/v1/demands/c5f070cbb14e444b9f50c704906defbe-f3e4d323d7860aca30ba5468a93bab7f2368e2d784e043552b1fc0df00e0174d/events?timeout=5&maxEvents=10', 'timeout': 300, 'headers': {'Accept': 'application/json', 'authorization': 'Bearer a644631de1bf49a0bfce9f68ef753047', 'User-Agent': 'OpenAPI-Generator//python', 'Content-Type': 'application/json'}}
+[2021-08-13T11:35:35.469-0400 DEBUG yapapi.events] SubscriptionCreated(sub_id='c5f070cbb14e444b9f50c704906defbe-f3e4d323d7860aca30ba5468a93bab7f2368e2d784e043552b1fc0df00e0174d')
+[2021-08-13T11:35:40.132-0400 DEBUG ya_payment.rest] response body: b'[]'
+[2021-08-13T11:35:40.135-0400 DEBUG ya_payment.rest] response body: b'[]'
+[2021-08-13T11:35:40.471-0400 DEBUG ya_market.rest] response body: b'[]'
+[2021-08-13T11:35:41.134-0400 DEBUG ya_payment.rest] request: {'method': 'GET', 'url': 'http://127.0.0.1:7465/payment-api/v1/invoiceEvents?afterTimestamp=2021-08-13T15%3A35%3A35.128145%2B00%3A00', 'timeout': 300, 'headers': {'Accept': 'application/json', 'authorization': 'Bearer a644631de1bf49a0bfce9f68ef753047', 'User-Agent': 'OpenAPI-Generator//python', 'Content-Type': 'application/json'}}
+[2021-08-13T11:35:41.136-0400 DEBUG ya_payment.rest] request: {'method': 'GET', 'url': 'http://127.0.0.1:7465/payment-api/v1/debitNoteEvents?afterTimestamp=2021-08-13T15%3A35%3A35.130392%2B00%3A00', 'timeout': 300, 'headers': {'Accept': 'application/json', 'authorization': 'Bearer a644631de1bf49a0bfce9f68ef753047', 'User-Agent': 'OpenAPI-Generator//python', 'Content-Type': 'application/json'}}
+[2021-08-13T11:35:41.473-0400 DEBUG ya_market.rest] request: {'method': 'GET', 'url': 'http://127.0.0.1:7465/market-api/v1/demands/c5f070cbb14e444b9f50c704906defbe-f3e4d323d7860aca30ba5468a93bab7f2368e2d784e043552b1fc0df00e0174d/events?timeout=5&maxEvents=10', 'timeout': 300, 'headers': {'Accept': 'application/json', 'authorization': 'Bearer a644631de1bf49a0bfce9f68ef753047', 'User-Agent': 'OpenAPI-Generator//python', 'Content-Type': 'application/json'}}
+[2021-08-13T11:35:46.137-0400 DEBUG ya_payment.rest] response body: b'[]'
+[2021-08-13T11:35:46.139-0400 DEBUG ya_payment.rest] response body: b'[]'
+[2021-08-13T11:35:46.476-0400 DEBUG ya_market.rest] response body: b'[]'
+[2021-08-13T11:35:47.139-0400 DEBUG ya_payment.rest] request: {'method': 'GET', 'url': 'http://127.0.0.1:7465/payment-api/v1/invoiceEvents?afterTimestamp=2021-08-13T15%3A35%3A35.128145%2B00%3A00', 'timeout': 300, 'headers': {'Accept': 'application/json', 'authorization': 'Bearer a644631de1bf49a0bfce9f68ef753047', 'User-Agent': 'OpenAPI-Generator//python', 'Content-Type': 'application/json'}}
+[2021-08-13T11:35:47.140-0400 DEBUG ya_payment.rest] request: {'method': 'GET', 'url': 'http://127.0.0.1:7465/payment-api/v1/debitNoteEvents?afterTimestamp=2021-08-13T15%3A35%3A35.130392%2B00%3A00', 'timeout': 300, 'headers': {'Accept': 'application/json', 'authorization': 'Bearer a644631de1bf49a0bfce9f68ef753047', 'User-Agent': 'OpenAPI-Generator//python', 'Content-Type': 'application/json'}}
+[2021-08-13T11:35:47.477-0400 DEBUG ya_market.rest] request: {'method': 'GET', 'url': 'http://127.0.0.1:7465/market-api/v1/demands/c5f070cbb14e444b9f50c704906defbe-f3e4d323d7860aca30ba5468a93bab7f2368e2d784e043552b1fc0df00e0174d/events?timeout=5&maxEvents=10', 'timeout': 300, 'headers': {'Accept': 'application/json', 'authorization': 'Bearer a644631de1bf49a0bfce9f68ef753047', 'User-Agent': 'OpenAPI-Generator//python', 'Content-Type': 'application/json'}}
+[2021-08-13T11:35:52.143-0400 DEBUG ya_payment.rest] response body: b'[]'
+[2021-08-13T11:35:52.143-0400 DEBUG ya_payment.rest] response body: b'[]'
+[2021-08-13T11:35:52.480-0400 DEBUG ya_market.rest] response body: b'[]'
+[2021-08-13T11:35:53.145-0400 DEBUG ya_payment.rest] request: {'method': 'GET', 'url': 'http://127.0.0.1:7465/payment-api/v1/invoiceEvents?afterTimestamp=2021-08-13T15%3A35%3A35.128145%2B00%3A00', 'timeout': 300, 'headers': {'Accept': 'application/json', 'authorization': 'Bearer a644631de1bf49a0bfce9f68ef753047', 'User-Agent': 'OpenAPI-Generator//python', 'Content-Type': 'application/json'}}
+[2021-08-13T11:35:53.146-0400 DEBUG ya_payment.rest] request: {'method': 'GET', 'url': 'http://127.0.0.1:7465/payment-api/v1/debitNoteEvents?afterTimestamp=2021-08-13T15%3A35%3A35.130392%2B00%3A00', 'timeout': 300, 'headers': {'Accept': 'application/json', 'authorization': 'Bearer a644631de1bf49a0bfce9f68ef753047', 'User-Agent': 'OpenAPI-Generator//python', 'Content-Type': 'application/json'}}
+[2021-08-13T11:35:53.481-0400 DEBUG ya_market.rest] request: {'method': 'GET', 'url': 'http://127.0.0.1:7465/market-api/v1/demands/c5f070cbb14e444b9f50c704906defbe-f3e4d323d7860aca30ba5468a93bab7f2368e2d784e043552b1fc0df00e0174d/events?timeout=5&maxEvents=10', 'timeout': 300, 'headers': {'Accept': 'application/json', 'authorization': 'Bearer a644631de1bf49a0bfce9f68ef753047', 'User-Agent': 'OpenAPI-Generator//python', 'Content-Type': 'application/json'}}
+[2021-08-13T11:35:55.139-0400 DEBUG yapapi.events] NoProposalsConfirmed(num_offers=0, timeout=datetime.timedelta(seconds=20))
+[2021-08-13T11:35:55.139-0400 WARNING yapapi.summary] No offers have been collected from the market for 20s. Make sure you're using the latest released versions of yagna and yapapi, and the correct subnet. Also make sure that the timeout for computing all tasks is within the 5 min to 180 min range.
+[2021-08-13T11:35:58.148-0400 DEBUG ya_payment.rest] response body: b'[]'
+[2021-08-13T11:35:58.149-0400 DEBUG ya_payment.rest] response body: b'[]'
+[2021-08-13T11:35:58.484-0400 DEBUG ya_market.rest] response body: b'[]'
+[2021-08-13T11:35:59.150-0400 DEBUG ya_payment.rest] request: {'method': 'GET', 'url': 'http://127.0.0.1:7465/payment-api/v1/invoiceEvents?afterTimestamp=2021-08-13T15%3A35%3A35.128145%2B00%3A00', 'timeout': 300, 'headers': {'Accept': 'application/json', 'authorization': 'Bearer a644631de1bf49a0bfce9f68ef753047', 'User-Agent': 'OpenAPI-Generator//python', 'Content-Type': 'application/json'}}
+[2021-08-13T11:35:59.151-0400 DEBUG ya_payment.rest] request: {'method': 'GET', 'url': 'http://127.0.0.1:7465/payment-api/v1/debitNoteEvents?afterTimestamp=2021-08-13T15%3A35%3A35.130392%2B00%3A00', 'timeout': 300, 'headers': {'Accept': 'application/json', 'authorization': 'Bearer a644631de1bf49a0bfce9f68ef753047', 'User-Agent': 'OpenAPI-Generator//python', 'Content-Type': 'application/json'}}
+[2021-08-13T11:35:59.485-0400 DEBUG ya_market.rest] request: {'method': 'GET', 'url': 'http://127.0.0.1:7465/market-api/v1/demands/c5f070cbb14e444b9f50c704906defbe-f3e4d323d7860aca30ba5468a93bab7f2368e2d784e043552b1fc0df00e0174d/events?timeout=5&maxEvents=10', 'timeout': 300, 'headers': {'Accept': 'application/json', 'authorization': 'Bearer a644631de1bf49a0bfce9f68ef753047', 'User-Agent': 'OpenAPI-Generator//python', 'Content-Type': 'application/json'}}
+[2021-08-13T11:36:01.255-0400 DEBUG yapapi.events] ComputationFinished(job_id='22ad8efe-6794-4a9b-bbaf-e26cdc4bd09e', exc_info=(<class 'asyncio.exceptions.CancelledError'>, CancelledError(), <traceback object at 0x7f0946e58c80>))
+Traceback (most recent call last):
+  File "blender.py", line 179, in <module>
+    loop.run_until_complete(task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 595, in run_until_complete
+    self.run_forever()
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 563, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 1808, in _run_once
+    event_list = self._selector.select(timeout)
+  File "/usr/lib/python3.8/selectors.py", line 468, in select
+    fd_event_list = self._selector.poll(timeout, max_ev)
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sensorweb/.envs/yagna-python-tutorial/lib/python3.8/site-packages/yapapi/executor/__init__.py", line 428, in _submit
+    done, pending = await asyncio.wait(
+  File "/usr/lib/python3.8/asyncio/tasks.py", line 426, in wait
+    return await _wait(fs, timeout, return_when, loop)
+  File "/usr/lib/python3.8/asyncio/tasks.py", line 523, in _wait
+    await waiter
+asyncio.exceptions.CancelledError
+[2021-08-13T11:36:01.257-0400 WARNING yapapi.summary] Computation cancelled
+[2021-08-13T11:36:01.258-0400 INFO yapapi.summary] Negotiated 0 agreements with 0 providers
+[2021-08-13T11:36:01.258-0400 DEBUG yapapi.executor] Terminating agreements...
+[2021-08-13T11:36:01.258-0400 INFO yapapi.executor] Waiting for Executor services to finish...
+[2021-08-13T11:36:01.259-0400 DEBUG ya_market.rest] request: {'method': 'DELETE', 'url': 'http://127.0.0.1:7465/market-api/v1/demands/c5f070cbb14e444b9f50c704906defbe-f3e4d323d7860aca30ba5468a93bab7f2368e2d784e043552b1fc0df00e0174d', 'timeout': 300, 'headers': {'Accept': 'application/json', 'authorization': 'Bearer a644631de1bf49a0bfce9f68ef753047', 'User-Agent': 'OpenAPI-Generator//python', 'Content-Type': 'application/json'}, 'data': None}
+[2021-08-13T11:36:01.263-0400 DEBUG ya_market.rest] response body: b''
+[2021-08-13T11:36:01.264-0400 INFO yapapi.executor] Golem is shutting down...
+[2021-08-13T11:36:01.264-0400 DEBUG yapapi.executor] Waiting for the jobs to finish...
+[2021-08-13T11:36:01.264-0400 INFO yapapi.executor] All jobs have finished
+[2021-08-13T11:36:01.264-0400 INFO yapapi.executor] Waiting for Golem services to finish...
+[2021-08-13T11:36:01.266-0400 DEBUG ya_payment.rest] request: {'method': 'DELETE', 'url': 'http://127.0.0.1:7465/payment-api/v1/allocations/81b995b2-fac8-4404-b5d2-b52a8bc2cd66', 'timeout': 300, 'headers': {'Accept': 'application/json', 'authorization': 'Bearer a644631de1bf49a0bfce9f68ef753047', 'User-Agent': 'OpenAPI-Generator//python', 'Content-Type': 'application/json'}, 'data': None}
+[2021-08-13T11:36:01.268-0400 DEBUG ya_payment.rest] response body: b'null'
+[2021-08-13T11:36:01.272-0400 DEBUG yapapi.events] ShutdownFinished(exc_info=None)
+[2021-08-13T11:36:01.273-0400 INFO yapapi.summary] Total cost: 0
+[2021-08-13T11:36:01.273-0400 INFO yapapi.summary] Executor has shut down
+[2021-08-13T11:36:01.273-0400 DEBUG yapapi.utils] AsyncWrapper's worker task cancelled
