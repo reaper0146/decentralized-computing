@@ -1,0 +1,11 @@
+#!/home/sensorweb/MS/decentralized-computing/golem/dict-cracker/hash-cracker/cracker-venv/bin/python3
+
+# -*- coding: utf-8 -*-
+import re
+import sys
+
+from gvmkit_build import build
+
+if __name__ == '__main__':
+    sys.argv[0] = re.sub(r'(-script\.pyw?|\.exe)?$', '', sys.argv[0])
+    sys.exit(build())
