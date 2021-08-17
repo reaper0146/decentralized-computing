@@ -13,7 +13,7 @@ ENCODING = "utf-8"
 
 HASH_PATH = Path("data/hash-short.json")
 WORDS_PATH = Path("data/words-short.json")
-RESULT_PATH = Path("data/out.json")
+RESULT_PATH = Path("data")
 
 if __name__ == "__main__":
     result = ""
