@@ -11,9 +11,9 @@ from hashlib import sha256
 
 ENCODING = "utf-8"
 
-HASH_PATH = Path("data/hash-short.json")
-WORDS_PATH = Path("data/words-short.json")
-RESULT_PATH = Path("data")
+HASH_PATH = Path("golem/input/hash.json")
+WORDS_PATH = Path("golem/input/words.txt")
+RESULT_PATH = Path("golem/output/result.json")
 
 if __name__ == "__main__":
     result = ""

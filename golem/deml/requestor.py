@@ -37,7 +37,6 @@ def data(words_file: Path, chunk_size: int = 100_000) -> Iterator[Task]:
     A single provider may compute multiple tasks.
     Return an iterator of `Task` objects.
     """
-    # TODO
     with words_file.open() as f:
         chunk = []
         for line in f:
@@ -56,7 +55,6 @@ async def steps(context: WorkContext, tasks: AsyncIterable[Task]):
     Tasks are provided from a common, asynchronous queue.
     The signature of this function cannot change, as it's used internally by `Executor`.
     """
-    # TODO
     context.send_file(str(args.hash), str(worker.HASH_PATH))
 
     async for task in tasks:
@@ -83,7 +81,7 @@ async def main():
         min_storage_gib=2.5,
     )
 
-    # TODO Run Executor using data and steps functions
+    #Run Executor using data and steps functions
     async with Golem(budget=1, subnet_tag=args.subnet) as golem:
 
         result = ""
