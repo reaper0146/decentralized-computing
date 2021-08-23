@@ -1,4 +1,4 @@
-#!/home/sensorweb/MS/decentralized-computing/golem/dict-cracker/hash-cracker/cracker-venv/bin/python3
+#!/home/sensorweb/MS/decentralized-computing/golem/test/hash-cracker/cracker-venv/bin/python3
 
 # -*- coding: utf-8 -*-
 import re

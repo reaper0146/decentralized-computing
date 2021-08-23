@@ -8,7 +8,7 @@ alias deactivate 'test $?_OLD_VIRTUAL_PATH != 0 && setenv PATH "$_OLD_VIRTUAL_PA
 # Unset irrelevant variables.
 deactivate nondestructive
 
-setenv VIRTUAL_ENV "/home/sensorweb/MS/decentralized-computing/golem/dict-cracker/hash-cracker/cracker-venv"
+setenv VIRTUAL_ENV "/home/sensorweb/MS/decentralized-computing/golem/test/hash-cracker/cracker-venv"
 
 set _OLD_VIRTUAL_PATH="$PATH"
 setenv PATH "$VIRTUAL_ENV/bin:$PATH"

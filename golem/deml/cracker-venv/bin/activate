@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/home/sensorweb/MS/decentralized-computing/golem/dict-cracker/hash-cracker/cracker-venv"
+VIRTUAL_ENV="/home/sensorweb/MS/decentralized-computing/golem/test/hash-cracker/cracker-venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
